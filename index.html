@@ -1,10 +1,1113 @@
-<html>
-    <head>
-        <meta charset="utf-8">
-        <titl>MMW</titl>
-    </head>
-    <body>
-        <h1 style="text-align: center;background-color: aqua;"> MMW شرکت محافظتی </h1>
-        <p style="text-align: center;font-size: 28pt;background-color: blueviolet;">به زودی خدمات شرکت در این ادرس بار گذاری میشود </p>
-    </body>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>گودکالا | GoodKala - فروشگاه اینترنتی</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="فروشگاه اینترنتی گودکالا، خرید آنلاین کالای دیجیتال، لوازم خانگی، مد و پوشاک با بهترین قیمت و کیفیت.">
+    <meta name="keywords" content="GoodKala, گودکالا, خرید آنلاین, فروشگاه اینترنتی">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="goodkala-logo.png">
+    <!-- FontAwesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #00a046;
+            --primary-dark: #008238;
+            --primary-light: #e6f7ef;
+            --accent-color: #ff8100;
+            --text-main: #212121;
+            --text-muted: #707070;
+            --bg-body: #f5f5f5;
+            --white: #ffffff;
+            --border-color: #e0e0e0;
+            --danger: #ef4056;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Vazirmatn', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            direction: rtl;
+            text-align: right;
+            line-height: 1.6;
+        }
+
+        body.ltr {
+            direction: ltr;
+            text-align: left;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Top Header Bar - Fixed 7px padding reduction */
+        .top-header-bar {
+            background-color: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            padding: 8px 7px;
+            font-size: 13px;
+        }
+
+        .header-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 7px;
+        }
+
+        .top-header-left, .top-header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .lang-btn {
+            background: none;
+            border: 1px solid var(--border-color);
+            padding: 3px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        /* Main Header */
+        .main-header {
+            background-color: var(--white);
+            padding: 12px 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .main-header-inner {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-img {
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .brand-name {
+            font-size: 22px;
+            font-weight: 900;
+            color: var(--primary-color);
+        }
+
+        .search-box {
+            flex: 1;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 10px 40px 10px 15px;
+            background-color: #f0f0f1;
+            border: none;
+            border-radius: 8px;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .search-box i {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .btn-auth, .btn-cart, .btn-operator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 14px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--white);
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .btn-auth:hover, .btn-cart:hover, .btn-operator:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        /* Navigation Bar */
+        .nav-bar {
+            background-color: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0 20px;
+        }
+
+        .nav-inner {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            gap: 25px;
+            overflow-x: auto;
+        }
+
+        .nav-inner a {
+            padding: 12px 0;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-muted);
+            white-space: nowrap;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-inner a:hover {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1300px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: 0.2s;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 160px;
+            object-fit: contain;
+            margin-bottom: 10px;
+            border-radius: 6px;
+        }
+
+        .product-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            height: 40px;
+            overflow: hidden;
+        }
+
+        .product-price {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .btn-add-cart {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 8px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            width: 100%;
+            transition: 0.2s;
+        }
+
+        .btn-add-cart:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            background: var(--white);
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            grid-column: 1 / -1;
+        }
+
+        /* Modals */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-size: 20px;
+            cursor: pointer;
+            color: var(--text-muted);
+        }
+
+        .modal-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            font-size: 13px;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            border-color: var(--primary-color);
+        }
+
+        .btn-submit {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Inline Error Alert Box */
+        .error-alert {
+            background-color: #fde8e8;
+            color: var(--danger);
+            padding: 10px;
+            border-radius: 6px;
+            font-size: 13px;
+            margin-bottom: 12px;
+            display: none;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Manager Floating Panel */
+        .manager-panel {
+            position: fixed;
+            top: 80px;
+            left: 20px;
+            width: 380px;
+            background: var(--white);
+            border: 2px solid var(--primary-color);
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            z-index: 999;
+            display: none;
+            flex-direction: column;
+            max-height: 80vh;
+        }
+
+        .manager-header {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 12px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .manager-tabs {
+            display: flex;
+            background: #f0f0f1;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .m-tab {
+            flex: 1;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 13px;
+            border: none;
+            background: none;
+        }
+
+        .m-tab.active {
+            background: var(--white);
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .manager-body {
+            padding: 15px;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        .manager-search {
+            margin-bottom: 12px;
+        }
+
+        .manager-search input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 13px;
+        }
+
+        .user-list-item {
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .user-list-item:hover {
+            background: var(--primary-light);
+            border-color: var(--primary-color);
+        }
+
+        /* Responsive */
+        @media(max-width: 768px) {
+            .main-header-inner {
+                flex-wrap: wrap;
+            }
+            .search-box {
+                order: 3;
+                max-width: 100%;
+            }
+            .manager-panel {
+                width: 90%;
+                left: 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Header Bar -->
+    <div class="top-header-bar">
+        <div class="header-container">
+            <div class="top-header-left">
+                <span>تلفن پشتیبانی: ۶۱۹۳۰۰۰۰-۰۲۱</span>
+                <span>|</span>
+                <span>پشتیبانی ۷ روز هفته، ۲۴ ساعته</span>
+            </div>
+            <div class="top-header-right">
+                <button class="lang-btn" onclick="toggleLanguage()">EN / فارسی</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="main-header-inner">
+            <div class="logo-area">
+                <img src="goodkala-logo.png" alt="GoodKala Logo" class="logo-img" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'42\' height=\'42\'><rect width=\'42\' height=\'42\' rx=\'8\' fill=\'%2300a046\'/><text x=\'50%\' y=\'55%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-weight=\'bold\' font-size=\'20\'>GK</text></svg>'">
+                <span class="brand-name">گودکالا <span style="font-size:12px; color:#707070;">GoodKala</span></span>
+            </div>
+            
+            <div class="search-box">
+                <i class="fa fa-search"></i>
+                <input type="text" id="searchInput" placeholder="جستجو در گودکالا..." oninput="searchProducts(this.value)">
+            </div>
+
+            <div class="header-actions">
+                <button class="btn-operator" onclick="openOperatorModal()">
+                    <i class="fa fa-user-shield"></i> <span data-i18n="operator_login">ورود فروشندگان / مدیر</span>
+                </button>
+                <button class="btn-auth" onclick="openAuthModal()">
+                    <i class="fa fa-user"></i> <span data-i18n="register_login">ورود / ثبت‌نام</span>
+                </button>
+                <button class="btn-cart" onclick="openCartModal()">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span id="cartCount">۰</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
+        <div class="nav-inner">
+            <a href="#"><i class="fa fa-bars"></i> <span data-i18n="categories">دسته‌بندی کالاها</span></a>
+            <a href="#" data-i18n="supermarket">سوپرمارکت</a>
+            <a href="#" data-i18n="discounts">تخفیف‌ها و پیشنهادها</a>
+            <a href="#" data-i18n="best_selling">پرسودترین‌ها</a>
+            <a href="#" data-i18n="about_us">درباره گودکالا</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="section-title">
+            <span data-i18n="products_list">لیست محصولات</span>
+            <span id="userWelcome" style="font-size: 14px; color: var(--primary-color);"></span>
+        </div>
+        
+        <div class="products-grid" id="productsGrid">
+            <!-- Dynamically populated or empty state -->
+        </div>
+    </div>
+
+    <!-- Auth Modal (User Registration / Login) -->
+    <div class="modal" id="authModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeAuthModal()">&times;</span>
+            <h3 class="modal-title" data-i18n="register_title">ثبت‌نام / ورود کاربر</h3>
+            <form id="authForm" onsubmit="handleUserRegistration(event)">
+                <div class="form-group">
+                    <label data-i18n="role">نقش کاربر</label>
+                    <select id="regRole">
+                        <option value="customer" data-i18n="role_customer">مشتری</option>
+                        <option value="seller" data-i18n="role_seller">فروشنده / فروشگاه</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="firstname">نام و نام خانوادگی</label>
+                    <input type="text" id="regName" required>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="phone">شماره تلفن</label>
+                    <input type="tel" id="regPhone" required>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="address">آدرس</label>
+                    <textarea id="regAddress" rows="2" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="postal_code">کد پستی</label>
+                    <input type="text" id="regPostal" required>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="email">ایمیل (اختیاری)</label>
+                    <input type="email" id="regEmail">
+                </div>
+
+                <!-- Seller Commitment Letter Fields -->
+                <div id="sellerCommitmentSection" style="display:none; background: #f9f9f9; padding: 12px; border-radius: 8px; border: 1px dashed var(--primary-color); margin-bottom: 15px;">
+                    <h4 style="font-size:14px; color:var(--primary-color); margin-bottom:8px;" data-i18n="commitment_title">تعهد‌نامه فروشندگان</h4>
+                    <div class="form-group">
+                        <label data-i18n="national_id">کد ملی</label>
+                        <input type="text" id="regNationalId">
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="shop_address">آدرس انبار / فروشگاه</label>
+                        <input type="text" id="regShopAddress">
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="shop_postal">کد پستی انبار / فروشگاه</label>
+                        <input type="text" id="regShopPostal">
+                    </div>
+                    <div class="form-group" style="display:flex; align-items:center; gap:8px;">
+                        <input type="checkbox" id="regCommitmentCheck" style="width:auto;">
+                        <label for="regCommitmentCheck" style="margin:0; font-size:12px;" data-i18n="commitment_text">قوانین و تعهدنامه فروشندگی در گودکالا را می‌پذیرم.</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit" data-i18n="submit_btn">تایید و ثبت‌نام</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Operator / Manager Login Modal -->
+    <div class="modal" id="operatorModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeOperatorModal()">&times;</span>
+            <h3 class="modal-title" data-i18n="operator_title">ورود اپراتور / مدیر</h3>
+            
+            <!-- Inline Error Alert -->
+            <div id="operatorErrorAlert" class="error-alert">نام کاربری یا رمز عبور اشتباه است.</div>
+
+            <form onsubmit="handleOperatorLogin(event)">
+                <div class="form-group">
+                    <label data-i18n="username">نام کاربری</label>
+                    <input type="text" id="opUser" required>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="password">رمز عبور</label>
+                    <input type="password" id="opPass" required>
+                </div>
+                <button type="submit" class="btn-submit" data-i18n="login_btn">ورود</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Operator Dashboard Modal (Add Products) -->
+    <div class="modal" id="operatorDashboardModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeOperatorDashboard()">&times;</span>
+            <h3 class="modal-title">پنل اپراتور - افزودن محصول جدید</h3>
+            <form onsubmit="handleAddProduct(event)">
+                <div class="form-group">
+                    <label>نام محصول</label>
+                    <input type="text" id="prodName" required>
+                </div>
+                <div class="form-group">
+                    <label>قیمت (تومان)</label>
+                    <input type="number" id="prodPrice" required>
+                </div>
+                <div class="form-group">
+                    <label>تصویر محصول (انتخاب از دستگاه)</label>
+                    <input type="file" id="prodImageFile" accept="image/*" required>
+                </div>
+                <button type="submit" class="btn-submit">ثبت و انتشار محصول</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeCartModal()">&times;</span>
+            <h3 class="modal-title" data-i18n="cart_title">سبد خرید</h3>
+            <div id="cartItemsList"></div>
+            <div id="cartTotalArea" style="margin-top: 15px; font-weight: 700; text-align: left;"></div>
+            <button class="btn-submit" onclick="checkout()" id="checkoutBtn" style="display:none;" data-i18n="checkout_btn">ثبت نهایی سفارش</button>
+        </div>
+    </div>
+
+    <!-- Manager Floating Panel -->
+    <div class="manager-panel" id="managerPanel">
+        <div class="manager-header">
+            <span id="managerTitle">پنل مدیریت گودکالا</span>
+            <i class="fa fa-times" style="cursor:pointer;" onclick="toggleManagerPanel(false)"></i>
+        </div>
+        <div class="manager-tabs">
+            <button class="m-tab active" onclick="switchManagerTab('users')" id="mTabUsers">کاربران</button>
+            <button class="m-tab" onclick="switchManagerTab('operators')" id="mTabOperators">فروشندگان</button>
+        </div>
+        <div class="manager-body">
+            <div class="manager-search">
+                <input type="text" id="managerSearchInput" placeholder="جستجو..." oninput="renderManagerList()">
+            </div>
+            <div id="managerListContainer"></div>
+        </div>
+    </div>
+
+    <!-- User Details Modal -->
+    <div class="modal" id="userDetailsModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="document.getElementById('userDetailsModal').style.display='none'">&times;</span>
+            <h3 class="modal-title" id="userDetailTitle">جزئیات کاربر</h3>
+            <div id="userDetailContent"></div>
+        </div>
+    </div>
+
+    <script>
+        // State management
+        let currentLang = 'fa';
+        let currentUser = JSON.parse(localStorage.getItem('gk_current_user')) || null;
+        let usersList = JSON.parse(localStorage.getItem('gk_users')) || [];
+        let productsList = JSON.parse(localStorage.getItem('gk_products')) || [];
+        let cart = JSON.parse(localStorage.getItem('gk_cart')) || [];
+        let managerActiveTab = 'users';
+
+        // Translations dictionary
+        const translations = {
+            fa: {
+                operator_login: "ورود فروشندگان / مدیر",
+                register_login: "ورود / ثبت‌نام",
+                categories: "دسته‌بندی کالاها",
+                supermarket: "سوپرمارکت",
+                discounts: "تخفیف‌ها و پیشنهادها",
+                best_selling: "پرسودترین‌ها",
+                about_us: "درباره گودکالا",
+                products_list: "لیست محصولات",
+                register_title: "ثبت‌نام / ورود کاربر",
+                role: "نقش کاربر",
+                role_customer: "مشتری",
+                role_seller: "فروشنده / فروشگاه",
+                firstname: "نام و نام خانوادگی",
+                phone: "شماره تلفن",
+                address: "آدرس",
+                postal_code: "کد پستی",
+                email: "ایمیل (اختیاری)",
+                commitment_title: "تعهد‌نامه فروشندگان",
+                national_id: "کد ملی",
+                shop_address: "آدرس انبار / فروشگاه",
+                shop_postal: "کد پستی انبار / فروشگاه",
+                commitment_text: "قوانین و تعهدنامه فروشندگی در گودکالا را می‌پذیرم.",
+                submit_btn: "تایید و ثبت‌نام",
+                operator_title: "ورود اپراتور / مدیر",
+                username: "نام کاربری",
+                password: "رمز عبور",
+                login_btn: "ورود",
+                cart_title: "سبد خرید",
+                checkout_btn: "ثبت نهایی سفارش"
+            },
+            en: {
+                operator_login: "Seller / Manager Login",
+                register_login: "Register / Login",
+                categories: "Categories",
+                supermarket: "Supermarket",
+                discounts: "Offers",
+                best_selling: "Best Selling",
+                about_us: "About Us",
+                products_list: "Products List",
+                register_title: "User Registration / Login",
+                role: "User Role",
+                role_customer: "Customer",
+                role_seller: "Seller / Vendor",
+                firstname: "Full Name",
+                phone: "Phone Number",
+                address: "Address",
+                postal_code: "Postal Code",
+                email: "Email (Optional)",
+                commitment_title: "Seller Commitment Letter",
+                national_id: "National ID",
+                shop_address: "Warehouse / Shop Address",
+                shop_postal: "Warehouse / Shop Postal Code",
+                commitment_text: "I accept the seller terms and commitment letter of GoodKala.",
+                submit_btn: "Confirm & Register",
+                operator_title: "Operator / Manager Login",
+                username: "Username",
+                password: "Password",
+                login_btn: "Login",
+                cart_title: "Shopping Cart",
+                checkout_btn: "Checkout Order"
+            }
+        };
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'fa' ? 'en' : 'fa';
+            document.documentElement.lang = currentLang;
+            document.documentElement.dir = currentLang === 'fa' ? 'rtl' : 'ltr';
+            if(currentLang === 'en') {
+                document.body.classList.add('ltr');
+            } else {
+                document.body.classList.remove('ltr');
+            }
+            updateTexts();
+        }
+
+        function updateTexts() {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if(translations[currentLang][key]) {
+                    el.innerText = translations[currentLang][key];
+                }
+            });
+        }
+
+        // Role select listener for commitment letter
+        document.getElementById('regRole').addEventListener('change', function(e) {
+            const commitSec = document.getElementById('sellerCommitmentSection');
+            if(e.target.value === 'seller') {
+                commitSec.style.display = 'block';
+            } else {
+                commitSec.style.display = 'none';
+            }
+        });
+
+        // Modals control
+        function openAuthModal() { document.getElementById('authModal').style.display = 'flex'; }
+        function closeAuthModal() { document.getElementById('authModal').style.display = 'none'; }
+        function openOperatorModal() { 
+            document.getElementById('operatorErrorAlert').style.display = 'none';
+            document.getElementById('opUser').value = '';
+            document.getElementById('opPass').value = '';
+            document.getElementById('operatorModal').style.display = 'flex'; 
+        }
+        function closeOperatorModal() { document.getElementById('operatorModal').style.display = 'none'; }
+        function openCartModal() { renderCart(); document.getElementById('cartModal').style.display = 'flex'; }
+        function closeCartModal() { document.getElementById('cartModal').style.display = 'none'; }
+        function closeOperatorDashboard() { document.getElementById('operatorDashboardModal').style.display = 'none'; }
+
+        // User Registration
+        function handleUserRegistration(e) {
+            e.preventDefault();
+            const role = document.getElementById('regRole').value;
+            const name = document.getElementById('regName').value;
+            const phone = document.getElementById('regPhone').value;
+            const address = document.getElementById('regAddress').value;
+            const postal = document.getElementById('regPostal').value;
+            const email = document.getElementById('regEmail').value;
+
+            let commitmentData = null;
+            if(role === 'seller') {
+                const nationalId = document.getElementById('regNationalId').value;
+                const shopAddress = document.getElementById('regShopAddress').value;
+                const shopPostal = document.getElementById('regShopPostal').value;
+                const isChecked = document.getElementById('regCommitmentCheck').checked;
+
+                if(!isChecked) {
+                    alert('لطفاً تعهدنامه فروشندگی را بپذیرید.');
+                    return;
+                }
+                commitmentData = { nationalId, shopAddress, shopPostal };
+            }
+
+            const newUser = {
+                id: 'usr_' + Date.now(),
+                role, name, phone, address, postal, email,
+                commitment: commitmentData,
+                history: []
+            };
+
+            usersList.push(newUser);
+            localStorage.setItem('gk_users', JSON.stringify(usersList));
+            currentUser = newUser;
+            localStorage.setItem('gk_current_user', JSON.stringify(currentUser));
+
+            closeAuthModal();
+            updateUserUI();
+            alert('ثبت‌نام با موفقیت انجام شد!');
+        }
+
+        function updateUserUI() {
+            if(currentUser) {
+                document.getElementById('userWelcome').innerText = `خوش آمدید، ${currentUser.name}`;
+            }
+        }
+
+        // Operator Login
+        function handleOperatorLogin(e) {
+            e.preventDefault();
+            const u = document.getElementById('opUser').value;
+            const p = document.getElementById('opPass').value;
+            const errAlert = document.getElementById('operatorErrorAlert');
+
+            if(u === 'goodkala' && p === 'GAPGPTMASKTOKEN4bf1gdjzgzsX0X') {
+                errAlert.style.display = 'none';
+                closeOperatorModal();
+                toggleManagerPanel(true);
+            } else {
+                // Check if registered seller
+                const seller = usersList.find(usr => usr.role === 'seller' && usr.phone === u);
+                if(seller && p === '1234') { 
+                    errAlert.style.display = 'none';
+                    closeOperatorModal();
+                    currentUser = seller;
+                    localStorage.setItem('gk_current_user', JSON.stringify(seller));
+                    document.getElementById('operatorDashboardModal').style.display = 'flex';
+                } else {
+                    errAlert.style.display = 'block';
+                }
+            }
+        }
+
+        // Add Product (Operator)
+        function handleAddProduct(e) {
+            e.preventDefault();
+            const name = document.getElementById('prodName').value;
+            const price = document.getElementById('prodPrice').value;
+            const fileInput = document.getElementById('prodImageFile');
+
+            if(fileInput.files && fileInput.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(evt) {
+                    const newProd = {
+                        id: 'prod_' + Date.now(),
+                        name,
+                        price: Number(price),
+                        image: evt.target.result,
+                        seller: currentUser ? currentUser.name : 'مدیر سایت'
+                    };
+                    productsList.push(newProd);
+                    localStorage.setItem('gk_products', JSON.stringify(productsList));
+                    closeOperatorDashboard();
+                    renderProducts();
+                    alert('محصول با موفقیت ثبت شد!');
+                }
+                reader.readAsDataURL(fileInput.files[0]);
+            }
+        }
+
+        // Render Products
+        function renderProducts(filtered = productsList) {
+            const grid = document.getElementById('productsGrid');
+            if(!filtered.length) {
+                grid.innerHTML = `<div class="empty-state">هنوز محصولی ثبت نشده است.</div>`;
+                return;
+            }
+            grid.innerHTML = filtered.map(p => `
+                <div class="product-card">
+                    <img src="${p.image}" class="product-img" alt="${p.name}">
+                    <div class="product-title">${p.name}</div>
+                    <div class="product-price">${p.price.toLocaleString()} تومان</div>
+                    <button class="btn-add-cart" onclick="addToCart('${p.id}')">افزودن به سبد خرید</button>
+                </div>
+            `).join('');
+        }
+
+        function searchProducts(keyword) {
+            const res = productsList.filter(p => p.name.toLowerCase().includes(keyword.toLowerCase()));
+            renderProducts(res);
+        }
+
+        // Cart functions
+        function addToCart(prodId) {
+            const prod = productsList.find(p => p.id === prodId);
+            if(!prod) return;
+            const exist = cart.find(item => item.id === prodId);
+            if(exist) {
+                exist.qty += 1;
+            } else {
+                cart.push({ ...prod, qty: 1 });
+            }
+            localStorage.setItem('gk_cart', JSON.stringify(cart));
+            updateCartCount();
+        }
+
+        function updateCartCount() {
+            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+            document.getElementById('cartCount').innerText = totalQty;
+        }
+
+        function renderCart() {
+            const list = document.getElementById('cartItemsList');
+            const totalArea = document.getElementById('cartTotalArea');
+            const checkoutBtn = document.getElementById('checkoutBtn');
+
+            if(!cart.length) {
+                list.innerHTML = `<p style="text-align:center; color:var(--text-muted);">سبد خرید شما خالی است.</p>`;
+                totalArea.innerHTML = '';
+                checkoutBtn.style.display = 'none';
+                return;
+            }
+
+            let total = 0;
+            list.innerHTML = cart.map(item => {
+                total += item.price * item.qty;
+                return `
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; border-bottom:1px solid var(--border-color); padding-bottom:8px;">
+                        <div>
+                            <div style="font-weight:600; font-size:14px;">${item.name}</div>
+                            <div style="font-size:12px; color:var(--text-muted);">${item.price.toLocaleString()} تومان × ${item.qty}</div>
+                        </div>
+                        <div>
+                            <button onclick="changeQty('${item.id}', 1)" style="padding:2px 8px;">+</button>
+                            <span style="margin:0 5px;">${item.qty}</span>
+                            <button onclick="changeQty('${item.id}', -1)" style="padding:2px 8px;">-</button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            totalArea.innerHTML = `مجموع کل: ${total.toLocaleString()} تومان`;
+            checkoutBtn.style.display = 'block';
+        }
+
+        function changeQty(id, delta) {
+            const item = cart.find(i => i.id === id);
+            if(!item) return;
+            item.qty += delta;
+            if(item.qty <= 0) {
+                cart = cart.filter(i => i.id !== id);
+            }
+            localStorage.setItem('gk_cart', JSON.stringify(cart));
+            updateCartCount();
+            renderCart();
+        }
+
+        function checkout() {
+            if(!currentUser) {
+                alert('لطفاً ابتدا ثبت‌نام یا وارد شوید.');
+                closeCartModal();
+                openAuthModal();
+                return;
+            }
+            const order = {
+                id: 'ord_' + Date.now(),
+                items: [...cart],
+                date: new Date().toLocaleDateString('fa-IR')
+            };
+            currentUser.history.push(order);
+            localStorage.setItem('gk_users', JSON.stringify(usersList));
+            localStorage.setItem('gk_current_user', JSON.stringify(currentUser));
+            
+            cart = [];
+            localStorage.removeItem('gk_cart');
+            updateCartCount();
+            closeCartModal();
+            alert('سفارش شما با موفقیت ثبت شد!');
+        }
+
+        // Manager Panel
+        function toggleManagerPanel(show) {
+            const panel = document.getElementById('managerPanel');
+            panel.style.display = show ? 'flex' : 'none';
+            if(show) renderManagerList();
+        }
+
+        function switchManagerTab(tab) {
+            managerActiveTab = tab;
+            document.getElementById('mTabUsers').classList.toggle('active', tab === 'users');
+            document.getElementById('mTabOperators').classList.toggle('active', tab === 'operators');
+            renderManagerList();
+        }
+
+        function renderManagerList() {
+            const container = document.getElementById('managerListContainer');
+            const searchVal = document.getElementById('managerSearchInput').value.toLowerCase();
+
+            const targetList = usersList.filter(u => {
+                const matchRole = managerActiveTab === 'users' ? u.role === 'customer' : u.role === 'seller';
+                const matchSearch = u.name.toLowerCase().includes(searchVal) || u.phone.includes(searchVal);
+                return matchRole && matchSearch;
+            });
+
+            if(!targetList.length) {
+                container.innerHTML = `<div style="text-align:center; color:var(--text-muted); padding:20px;">هنوز کاربری وجود ندارد</div>`;
+                return;
+            }
+
+            container.innerHTML = targetList.map(u => `
+                <div class="user-list-item" onclick="showUserDetails('${u.id}')">
+                    <div style="font-weight:700;">${u.name}</div>
+                    <div style="font-size:12px; color:var(--text-muted);">تلفن: ${u.phone} | آدرس: ${u.address}</div>
+                </div>
+            `).join('');
+        }
+
+        function showUserDetails(userId) {
+            const user = usersList.find(u => u.id === userId);
+            if(!user) return;
+
+            document.getElementById('userDetailTitle').innerText = `جزئیات ${user.role === 'seller' ? 'فروشنده' : 'کاربر'}: ${user.name}`;
+            
+            let html = `
+                <p><strong>تلفن:</strong> ${user.phone}</p>
+                <p><strong>آدرس:</strong> ${user.address}</p>
+                <p><strong>کد پستی:</strong> ${user.postal}</p>
+                <p><strong>ایمیل:</strong> ${user.email || '-'}</p>
+            `;
+
+            if(user.role === 'seller' && user.commitment) {
+                html += `
+                    <div style="margin-top:10px; background:#f0f9f4; padding:10px; border-radius:6px; border:1px solid var(--primary-color);">
+                        <h4 style="color:var(--primary-color); font-size:13px;">اطلاعات تعهدنامه</h4>
+                        <p><strong>کد ملی:</strong> ${user.commitment.nationalId}</p>
+                        <p><strong>آدرس انبار/فروشگاه:</strong> ${user.commitment.shopAddress}</p>
+                        <p><strong>کد پستی انبار/فروشگاه:</strong> ${user.commitment.shopPostal}</p>
+                    </div>
+                `;
+            }
+
+            html += `<h4 style="margin-top:15px; font-size:14px;">تاریخچه خرید و سفارش‌ها (${user.history.length})</h4>`;
+            if(!user.history.length) {
+                html += `<p style="font-size:12px; color:var(--text-muted);">سفارشی ثبت نشده است.</p>`;
+            } else {
+                html += user.history.map(h => `
+                    <div style="font-size:12px; background:#f5f5f5; padding:8px; border-radius:4px; margin-top:5px;">
+                        <div><strong>تاریخ:</strong> ${h.date}</div>
+                        <div>تعداد اقلام: ${h.items.reduce((s,i)=>s+i.qty,0)}</div>
+                    </div>
+                `).join('');
+            }
+
+            document.getElementById('userDetailContent').innerHTML = html;
+            document.getElementById('userDetailsModal').style.display = 'flex';
+        }
+
+        // Initialize App on load
+        window.onload = function() {
+            renderProducts();
+            updateCartCount();
+            updateUserUI();
+        };
+    </script>
+</body>
 </html>
